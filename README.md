@@ -76,6 +76,50 @@ npm run build
 npm start
 ```
 
+## Deployment to Vercel
+
+### Option 1: Deploy via Vercel CLI (Recommended)
+
+1. Install Vercel CLI globally:
+```bash
+npm install -g vercel
+```
+
+2. Login to Vercel:
+```bash
+vercel login
+```
+
+3. Deploy to production:
+```bash
+vercel --prod
+```
+
+### Option 2: Deploy via Vercel Dashboard
+
+1. Push your code to GitHub (if not already done):
+```bash
+git add .
+git commit -m "Ready for deployment"
+git push origin main
+```
+
+2. Go to [vercel.com](https://vercel.com) and sign in with your GitHub account
+
+3. Click "Add New Project"
+
+4. Import your GitHub repository
+
+5. Vercel will automatically detect Next.js and configure the project
+
+6. Click "Deploy" - Vercel will build and deploy your site automatically
+
+### Post-Deployment
+
+- Your site will be available at `https://your-project-name.vercel.app`
+- You can add a custom domain in the Vercel dashboard under Project Settings → Domains
+- Environment variables (if needed) can be added in Project Settings → Environment Variables
+
 ## Customization
 
 ### Update Contact Information
