@@ -1,6 +1,7 @@
 'use client'
 
 import Script from 'next/script'
+import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -31,7 +32,6 @@ export default function Footer() {
               addressCountry: 'KE',
             },
             sameAs: [
-              'https://www.facebook.com/financialbeaconconsulting',
               'https://www.linkedin.com/in/cpa-weke-ochieng-luke-174b09127/',
               'https://x.com/wekeluke1',
               'https://www.tiktok.com/@fbc610',
@@ -44,26 +44,50 @@ export default function Footer() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Financial Beacon Consulting</h3>
-              <p className="text-emerald/80 mb-6">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  {/* Modern FBC Logo Design */}
+                  <div className="relative">
+                    {/* Background gradient circle */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald via-emerald to-emerald-dark rounded-xl blur-sm opacity-50"></div>
+                    {/* Main logo container */}
+                    <div className="relative bg-gradient-to-br from-emerald/20 to-emerald/10 backdrop-blur-md rounded-xl p-3 border-2 border-emerald/30 hover:border-emerald/60 transition-all duration-300 group">
+                      <Image
+                        src="/logo/logo.png"
+                        alt="Financial Beacon Consulting Logo"
+                        width={60}
+                        height={60}
+                        className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to modern FBC text design
+                          const target = e.target as HTMLImageElement
+                          target.style.display = 'none'
+                          const parent = target.closest('div')?.parentElement
+                          if (parent && !parent.querySelector('.fbc-logo-fallback')) {
+                            const fallback = document.createElement('div')
+                            fallback.className = 'fbc-logo-fallback flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald to-emerald-dark rounded-lg'
+                            fallback.innerHTML = '<span class="text-white font-bold text-lg">FBC</span>'
+                            parent.appendChild(fallback)
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                  {/* FBC Text with modern styling */}
+                  <div>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-white via-emerald/90 to-white bg-clip-text text-transparent">
+                      FBC
+                    </h3>
+                    <p className="text-xs text-emerald/70 font-medium tracking-wider uppercase">
+                      Financial Beacon Consulting
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p className="text-emerald/80 mb-6 leading-relaxed">
                 Your Trusted Partner in Financial Clarity & Compliance
               </p>
               <div className="flex space-x-4">
-                <a
-                  href="https://www.facebook.com/financialbeaconconsulting"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-emerald/20 hover:bg-emerald rounded-lg flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-emerald/50"
-                  aria-label="Facebook"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                </a>
                 <a
                   href="https://www.linkedin.com/in/cpa-weke-ochieng-luke-174b09127/"
                   target="_blank"

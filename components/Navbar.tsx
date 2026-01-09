@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
@@ -40,9 +41,38 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link
             href="/home"
-            className="text-2xl font-bold text-white hover:text-emerald transition-colors duration-300"
+            className="flex items-center gap-3 group relative"
           >
-            FBC
+            <div className="relative">
+              {/* Modern logo container with gradient border effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald via-emerald/80 to-emerald rounded-lg blur-sm opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="relative bg-white/10 backdrop-blur-md rounded-lg p-2 border border-emerald/30 group-hover:border-emerald/60 transition-all duration-300 group-hover:bg-white/15">
+                <Image
+                  src="/logo/logo.png"
+                  alt="Financial Beacon Consulting Logo"
+                  width={150}
+                  height={50}
+                  className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  priority
+                  onError={(e) => {
+                    // Fallback to text if logo doesn't exist
+                    const target = e.target as HTMLImageElement
+                    target.style.display = 'none'
+                    const parent = target.closest('div')?.parentElement
+                    if (parent && !parent.querySelector('.logo-fallback')) {
+                      const fallback = document.createElement('span')
+                      fallback.className = 'logo-fallback text-xl font-bold bg-gradient-to-r from-white to-emerald bg-clip-text text-transparent'
+                      fallback.textContent = 'FBC'
+                      parent.appendChild(fallback)
+                    }
+                  }}
+                />
+              </div>
+            </div>
+            {/* Optional: Add company name next to logo */}
+            <span className="hidden sm:block text-lg font-bold bg-gradient-to-r from-white via-emerald/90 to-white bg-clip-text text-transparent group-hover:from-emerald group-hover:via-white group-hover:to-emerald transition-all duration-300">
+              FBC
+            </span>
           </Link>
 
           {/* Desktop Menu */}

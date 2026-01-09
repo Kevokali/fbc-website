@@ -11,121 +11,64 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center text-white pt-20"
+      className="relative min-h-screen flex items-center justify-center text-white pt-20 overflow-hidden"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundBlendMode: 'overlay',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="absolute inset-0 bg-deep-blue/40"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-deep-blue/50 via-deep-blue/40 to-emerald/10"></div>
+      {/* Subtle overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-deep-blue/50 via-deep-blue/40 to-emerald/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/60 via-transparent to-transparent"></div>
       
-      {/* KRA, NSSF, SHIF Icons Pattern Background */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
+      {/* Modern geometric pattern overlay */}
+      <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 100px,
-            rgba(42, 157, 143, 0.1) 100px,
-            rgba(42, 157, 143, 0.1) 101px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 100px,
-            rgba(42, 157, 143, 0.1) 100px,
-            rgba(42, 157, 143, 0.1) 101px
-          )`
+          backgroundImage: `linear-gradient(45deg, rgba(42, 157, 143, 0.1) 25%, transparent 25%), 
+                           linear-gradient(-45deg, rgba(42, 157, 143, 0.1) 25%, transparent 25%), 
+                           linear-gradient(45deg, transparent 75%, rgba(42, 157, 143, 0.1) 75%), 
+                           linear-gradient(-45deg, transparent 75%, rgba(42, 157, 143, 0.1) 75%)`,
+          backgroundSize: '60px 60px',
+          backgroundPosition: '0 0, 0 30px, 30px -30px, -30px 0px'
         }}></div>
-        
-        {/* KRA Icon Pattern */}
-        <div className="absolute top-20 left-10 w-32 h-32 text-emerald/30">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-        </div>
-        <div className="absolute top-40 right-20 w-28 h-28 text-emerald/25">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-        </div>
-        <div className="absolute bottom-32 left-1/4 w-24 h-24 text-emerald/30">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-        </div>
-
-        {/* NSSF Icon Pattern */}
-        <div className="absolute top-60 right-1/3 w-36 h-36 text-emerald/25">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.18L20 8v9c0 4.54-3.07 8.79-7.09 9.81-.54.13-1.07.13-1.61 0C7.07 25.79 4 21.54 4 17V8l8-3.82z"/>
-            <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-          </svg>
-        </div>
-        <div className="absolute bottom-20 right-10 w-30 h-30 text-emerald/20">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.18L20 8v9c0 4.54-3.07 8.79-7.09 9.81-.54.13-1.07.13-1.61 0C7.07 25.79 4 21.54 4 17V8l8-3.82z"/>
-            <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-          </svg>
-        </div>
-
-        {/* SHIF/Health Icon Pattern */}
-        <div className="absolute top-1/3 left-1/2 w-32 h-32 text-emerald/25">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-            <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 9l-3-3 1.41-1.41L11 12.17l4.59-4.59L17 9l-6 6z"/>
-          </svg>
-        </div>
-        <div className="absolute bottom-40 left-1/3 w-28 h-28 text-emerald/20">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-        </div>
-
-        {/* Tax/Calculator Icons */}
-        <div className="absolute top-1/4 right-1/4 w-26 h-26 text-emerald/25">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-          </svg>
-        </div>
-        <div className="absolute bottom-1/3 right-1/2 w-30 h-30 text-emerald/20">
-          <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-            <path d="M7 2v2h1v14c0 2.21 1.79 4 4 4s4-1.79 4-4V4h1V2H7zm4 18c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2z"/>
-          </svg>
-        </div>
       </div>
       
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+      {/* Animated floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-emerald/5 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-deep-blue/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '0.75s' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div
-          className={`mb-6 ${
+          className={`mb-8 ${
             isVisible ? 'animate-fade-in' : 'opacity-0'
           }`}
         >
-          <span className="inline-block px-4 py-2 bg-emerald/20 backdrop-blur-sm border border-emerald/30 rounded-full text-emerald text-sm font-semibold mb-6 animate-float">
+          <span className="inline-block px-6 py-3 bg-white/95 backdrop-blur-md border-2 border-emerald/60 rounded-full text-deep-blue text-sm font-bold mb-6 animate-float shadow-2xl">
             Trusted Financial Services in Nairobi City and Beyond
           </span>
         </div>
         
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight ${
+          className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-tight tracking-tight ${
             isVisible ? 'animate-fade-in' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.1s' }}
         >
-          Financial Beacon Consulting
+          <span className="bg-gradient-to-r from-white via-emerald/90 to-white bg-clip-text text-transparent drop-shadow-2xl">
+            Financial Beacon
+          </span>
+          <br />
+          <span className="text-white drop-shadow-2xl">Consulting</span>
         </h1>
         
         <p
-          className={`text-xl sm:text-2xl md:text-3xl mb-12 text-emerald/90 font-light ${
+          className={`text-2xl sm:text-3xl md:text-4xl mb-16 text-white/95 font-medium max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
             isVisible ? 'animate-fade-in' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.2s' }}
@@ -134,36 +77,43 @@ export default function HeroSection() {
         </p>
         
         <div
-          className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${
+          className={`flex flex-col sm:flex-row gap-6 justify-center items-center ${
             isVisible ? 'animate-fade-in' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.4s' }}
         >
           <a
             href="/contact"
-            className="group px-8 py-4 bg-emerald hover:bg-emerald/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald/50 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden"
+            className="group px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 border-2 border-white/30 hover:border-white/50 text-white font-bold rounded-xl transition-all duration-300 shadow-2xl hover:shadow-emerald/50 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden text-lg"
           >
-            <span className="relative z-10">Contact Us</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-emerald to-emerald/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative z-10 flex items-center gap-3">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Contact Us
+            </span>
+            <span className="absolute inset-0 bg-gradient-to-r from-emerald/20 to-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </a>
           
           <a
-            href="/contact"
-            className="group relative px-8 py-4 bg-gradient-to-r from-emerald via-emerald to-emerald-dark hover:from-emerald hover:via-emerald-light hover:to-emerald text-white font-bold rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-emerald/50 transform hover:-translate-y-1 hover:scale-110 overflow-hidden"
+            href="https://wa.me/254702491439?text=Hello%2C%20I%20would%20like%20to%20chat%20with%20you%20about%20your%20financial%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-10 py-5 bg-gradient-to-r from-emerald via-emerald to-emerald-dark hover:from-emerald-light hover:via-emerald hover:to-emerald-dark text-white font-bold rounded-xl transition-all duration-300 shadow-2xl hover:shadow-emerald/70 transform hover:-translate-y-2 hover:scale-110 overflow-hidden text-lg"
           >
             {/* Animated shine effect */}
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
             
             {/* Button content */}
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              <svg className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <span className="relative z-10 flex items-center justify-center gap-3">
+              <svg className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
               </svg>
-              <span>Book a Consultation</span>
+              <span>Chat with us</span>
             </span>
             
             {/* Pulse effect */}
-            <span className="absolute inset-0 rounded-lg bg-emerald/50 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></span>
+            <span className="absolute inset-0 rounded-xl bg-emerald/50 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></span>
           </a>
         </div>
       </div>

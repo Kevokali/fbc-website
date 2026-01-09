@@ -16,7 +16,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Luke Weke',
     role: 'Director & Lead Consultant',
-    qualifications: 'CPA | BCom (Finance) | MSc (Ongoing)',
+    qualifications: 'CPA | BCom (Finance) | MSc (Finance) Ongoing',
     phone: '0702491439',
     image: '/team/luke-weke.jpg', // Placeholder - user will add actual photo
     bio: 'Experienced financial consultant with expertise in accounting, tax compliance, and business advisory services.',
@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'CPA Calleb Masese',
     role: 'Partner',
-    qualifications: 'CPA',
+    qualifications: 'CPA | BCom (Accounting) Ongoing',
     phone: '0711721456',
     image: '/team/calleb-masese.jpg', // Placeholder - user will add actual photo
     bio: 'Certified Public Accountant specializing in audit services, tax planning, and financial compliance.',
@@ -205,7 +205,7 @@ export default function TeamSection() {
                         onError={() => {
                           setImageErrors((prev) => ({ ...prev, [member.name]: true }))
                         }}
-                        onLoadingComplete={() => {
+                        onLoad={() => {
                           setImageErrors((prev) => ({ ...prev, [member.name]: false }))
                         }}
                         draggable={false}

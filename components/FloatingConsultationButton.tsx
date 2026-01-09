@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 export default function FloatingConsultationButton() {
   const [isVisible, setIsVisible] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,35 +15,41 @@ export default function FloatingConsultationButton() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   if (!isScrolled) return null
 
   return (
-    <a
-      href="/contact"
+    <button
+      onClick={scrollToTop}
       className={`fixed bottom-6 left-6 z-40 group ${
         isVisible ? 'animate-slide-up' : 'opacity-0'
       }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      aria-label="Scroll to top"
     >
       <div className="relative">
-        {/* Main button - starts as icon only, expands on hover */}
-        <div className="relative bg-emerald hover:bg-emerald-dark text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group overflow-hidden">
-          {/* Calendar icon - always visible */}
-          <div className="p-3">
-            <svg className="w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
+        {/* Scroll to top button - modern circular design */}
+        <div className="relative bg-gradient-to-br from-emerald via-emerald to-emerald-dark hover:from-emerald-light hover:via-emerald hover:to-emerald-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group overflow-hidden w-14 h-14">
+          {/* Animated background glow */}
+          <div className="absolute inset-0 bg-emerald/50 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
           
-          {/* Text - appears on hover */}
-          <span className={`pr-4 transition-all duration-300 whitespace-nowrap ${
-            isHovered ? 'max-w-xs opacity-100' : 'max-w-0 opacity-0 overflow-hidden'
-          }`}>
-            Book Consultation
-          </span>
+          {/* Up arrow icon */}
+          <svg 
+            className="w-6 h-6 transition-transform duration-300 group-hover:-translate-y-1 relative z-10" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            strokeWidth={2.5}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
         </div>
       </div>
-    </a>
+    </button>
   )
 }
