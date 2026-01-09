@@ -48,13 +48,14 @@ export default function TeamSection() {
       { threshold: 0.1 }
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+    const currentRef = sectionRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [])
@@ -162,7 +163,7 @@ export default function TeamSection() {
                         userSelect: 'none',
                         WebkitUserSelect: 'none',
                         WebkitUserDrag: 'none'
-                      }}
+                      } as React.CSSProperties}
                     />
                     
                     {/* Placeholder for image - shown when image doesn't exist or fails to load */}
@@ -200,7 +201,7 @@ export default function TeamSection() {
                           WebkitUserDrag: 'none',
                           pointerEvents: 'none',
                           transform: member.name === 'CPA Calleb Masese' ? 'rotate(1deg)' : 'none'
-                        }}
+                        } as React.CSSProperties}
                         onError={() => {
                           setImageErrors((prev) => ({ ...prev, [member.name]: true }))
                         }}
