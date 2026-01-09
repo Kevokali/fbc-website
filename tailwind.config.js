@@ -8,12 +8,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Trust - Deep Blue / Navy
         'deep-blue': '#1B3A57',
+        'navy': '#0F2537',
+        'navy-light': '#2A4A6B',
+        
+        // Growth - Emerald / Green
         'emerald': '#2A9D8F',
-        'gold': '#F4C430',
+        'emerald-dark': '#1E7A6F',
+        'emerald-light': '#3DB8A8',
+        
+        // Clarity - Soft Gray / White
         'light-grey': '#F5F5F5',
+        'soft-grey': '#E8E8E8',
+        'grey-medium': '#D0D0D0',
+        'white': '#FFFFFF',
+        
+        // Text colors
         'text-primary': '#333333',
         'text-secondary': '#666666',
+        
+        // Legacy support (will be phased out)
+        'gold': '#2A9D8F', // Replaced with emerald for finance theme
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out',

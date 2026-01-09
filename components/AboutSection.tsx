@@ -153,10 +153,10 @@ export default function AboutSection() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      bgColor: 'from-gold/10 to-gold/5',
-      hoverBgColor: 'from-gold to-gold/80',
-      textColor: 'text-gold',
-      borderColor: 'border-gold/30',
+      bgColor: 'from-emerald/10 to-emerald/5',
+      hoverBgColor: 'from-emerald to-emerald-dark',
+      textColor: 'text-emerald',
+      borderColor: 'border-emerald/30',
       description: 'Entrepreneurs building their business foundation',
     },
   ]
@@ -285,11 +285,11 @@ export default function AboutSection() {
 
           {/* Vision Card */}
           <div className="group relative bg-gradient-to-br from-emerald to-emerald/90 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gold/20 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald/20 rounded-full blur-3xl"></div>
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-emerald/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg
-                  className="w-8 h-8 text-gold"
+                  className="w-8 h-8 text-emerald"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

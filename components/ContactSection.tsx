@@ -1,6 +1,7 @@
 'use client'
 
 import Script from 'next/script'
+import SmartContactForm from './SmartContactForm'
 
 export default function ContactSection() {
   return (
@@ -30,8 +31,9 @@ export default function ContactSection() {
             },
             sameAs: [
               'https://www.facebook.com/financialbeaconconsulting',
-              'https://www.linkedin.com/company/financialbeaconconsulting',
-              'https://twitter.com/fbc_consulting',
+              'https://www.linkedin.com/in/cpa-weke-ochieng-luke-174b09127/',
+              'https://x.com/wekeluke1',
+              'https://www.tiktok.com/@fbc610',
             ],
           }),
         }}
@@ -47,14 +49,14 @@ export default function ContactSection() {
           
           {/* Consultation Booking Card - Prominent */}
           <div className="mb-12 max-w-2xl mx-auto">
-            <div className="bg-gradient-to-br from-gold/10 via-gold/5 to-emerald/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-emerald/10 via-emerald/5 to-deep-blue/10 rounded-2xl p-8 border-2 border-emerald/30 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
               {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-2xl"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald/10 rounded-full blur-2xl"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald/10 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-deep-blue/10 rounded-full blur-2xl"></div>
               
               <div className="relative z-10">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold/80 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-dark rounded-full flex items-center justify-center shadow-lg">
                     <svg className="w-8 h-8 text-deep-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
@@ -71,7 +73,7 @@ export default function ContactSection() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="/contact"
-                    className="group relative px-8 py-4 bg-gradient-to-r from-gold via-gold to-gold/90 hover:from-gold hover:via-gold/90 hover:to-gold text-deep-blue font-bold rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-gold/50 transform hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                    className="group relative px-8 py-4 bg-gradient-to-r from-emerald via-emerald to-emerald-dark hover:from-emerald hover:via-emerald-light hover:to-emerald text-white font-bold rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-emerald/50 transform hover:-translate-y-1 hover:scale-105 overflow-hidden"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
                     <span className="relative z-10 flex items-center justify-center gap-2">
@@ -286,31 +288,7 @@ export default function ContactSection() {
               <h3 className="text-2xl font-semibold text-deep-blue mb-6">
                 Send Us a Message
               </h3>
-              <div className="bg-light-grey p-6 rounded-xl border border-emerald/10 hover:border-emerald/30 transition-all duration-300 mb-6">
-                <p className="text-text-primary mb-4">
-                  Please fill out the form below or use the embedded Google Form
-                  to get in touch with us.
-                </p>
-                <div className="rounded-lg overflow-hidden shadow-lg">
-                  <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfYOUR_FORM_ID/viewform?embedded=true"
-                    width="100%"
-                    height="600"
-                    frameBorder="0"
-                    marginHeight={0}
-                    marginWidth={0}
-                    className="rounded-lg"
-                    title="Contact Form"
-                  >
-                    Loading…
-                  </iframe>
-                </div>
-                <p className="text-sm text-text-secondary mt-3">
-                  Note: Replace the form URL above with your actual Google Form
-                  embed URL
-                </p>
-              </div>
-              
+              <SmartContactForm />
             </div>
           </div>
 

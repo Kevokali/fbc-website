@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <svg
                     key={i}
-                    className="w-5 h-5 text-gold group-hover:scale-110 transition-transform duration-300"
+                    className="w-5 h-5 text-emerald group-hover:scale-110 transition-transform duration-300"
                     style={{ transitionDelay: `${i * 0.05}s` }}
                     fill="currentColor"
                     viewBox="0 0 20 20"

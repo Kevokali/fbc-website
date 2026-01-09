@@ -101,7 +101,7 @@ export default function HeroSection() {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-emerald/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -149,7 +149,7 @@ export default function HeroSection() {
           
           <a
             href="/contact"
-            className="group relative px-8 py-4 bg-gradient-to-r from-gold via-gold to-gold/90 hover:from-gold hover:via-gold/90 hover:to-gold text-deep-blue font-bold rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-gold/50 transform hover:-translate-y-1 hover:scale-110 overflow-hidden"
+            className="group relative px-8 py-4 bg-gradient-to-r from-emerald via-emerald to-emerald-dark hover:from-emerald hover:via-emerald-light hover:to-emerald text-white font-bold rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-emerald/50 transform hover:-translate-y-1 hover:scale-110 overflow-hidden"
           >
             {/* Animated shine effect */}
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
@@ -163,7 +163,7 @@ export default function HeroSection() {
             </span>
             
             {/* Pulse effect */}
-            <span className="absolute inset-0 rounded-lg bg-gold/50 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></span>
+            <span className="absolute inset-0 rounded-lg bg-emerald/50 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></span>
           </a>
         </div>
       </div>
