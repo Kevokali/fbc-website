@@ -17,13 +17,15 @@ export default function ContactSection() {
             logo: 'https://www.financialbeaconconsulting.com/logo.png',
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+254-XXX-XXX-XXX',
+              telephone: '+254-754-029-431',
               contactType: 'Customer Service',
-              email: 'info@financialbeaconconsulting.com',
+              email: 'financialbeconconsulting@gmail.com',
             },
             address: {
               '@type': 'PostalAddress',
+              streetAddress: 'Revlon Plaza, 3rd Floor, Kimathi Street',
               addressLocality: 'Nairobi',
+              postalCode: '00200',
               addressCountry: 'KE',
             },
             sameAs: [
@@ -81,13 +83,13 @@ export default function ContactSection() {
                   </a>
                   
                   <a
-                    href="tel:+254-XXX-XXX-XXX"
+                    href="tel:+254754029431"
                     className="px-8 py-4 bg-white border-2 border-emerald hover:bg-emerald hover:text-white text-emerald font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    Call Us
+                    Call Us: 0754029431
                   </a>
                 </div>
                 
@@ -141,11 +143,40 @@ export default function ContactSection() {
                     <div className="ml-4">
                       <p className="text-text-secondary mb-1">Phone</p>
                       <a
-                        href="tel:+254-XXX-XXX-XXX"
+                        href="tel:+254754029431"
                         className="text-deep-blue font-semibold hover:text-emerald transition-colors duration-300"
                       >
-                        +254-XXX-XXX-XXX
+                        +254 754 029 431
                       </a>
+                      <p className="text-xs text-text-secondary mt-1">Business Line</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start group">
+                    <div className="flex-shrink-0 w-12 h-12 bg-emerald/10 rounded-lg flex items-center justify-center group-hover:bg-emerald group-hover:scale-110 transition-all duration-300">
+                      <svg
+                        className="h-6 w-6 text-emerald group-hover:text-white transition-colors duration-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-4">
+                      <p className="text-text-secondary mb-1">Partner Line</p>
+                      <a
+                        href="tel:+254711721456"
+                        className="text-deep-blue font-semibold hover:text-emerald transition-colors duration-300"
+                      >
+                        +254 711 721 456
+                      </a>
+                      <p className="text-xs text-text-secondary mt-1">CPA Calleb Masese</p>
                     </div>
                   </div>
                   
@@ -168,10 +199,10 @@ export default function ContactSection() {
                     <div className="ml-4">
                       <p className="text-text-secondary mb-1">Email</p>
                       <a
-                        href="mailto:info@financialbeaconconsulting.com"
+                        href="mailto:financialbeconconsulting@gmail.com"
                         className="text-deep-blue font-semibold hover:text-emerald transition-colors duration-300"
                       >
-                        info@financialbeaconconsulting.com
+                        financialbeconconsulting@gmail.com
                       </a>
                     </div>
                   </div>
@@ -201,8 +232,9 @@ export default function ContactSection() {
                     <div className="ml-4">
                       <p className="text-text-secondary mb-1">Location</p>
                       <p className="text-deep-blue font-semibold">
-                        Nairobi, Kenya
+                        Revlon Plaza, 3rd Floor, Kimathi Street
                       </p>
+                      <p className="text-xs text-text-secondary mt-1">Nairobi, Kenya</p>
                     </div>
                   </div>
                   
@@ -219,7 +251,7 @@ export default function ContactSection() {
                     <div className="ml-4">
                       <p className="text-text-secondary mb-1">WhatsApp</p>
                       <a
-                        href="https://wa.me/254XXXXXXXXX?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
+                        href="https://wa.me/254702491439?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-deep-blue font-semibold hover:text-green-500 transition-colors duration-300 flex items-center gap-2"
@@ -230,7 +262,7 @@ export default function ContactSection() {
                         </svg>
                       </a>
                       <p className="text-xs text-text-secondary mt-1">
-                        Replace 254XXXXXXXXX with your WhatsApp number (include country code, no + or spaces)
+                        +254 702 491 439 (Business WhatsApp & SMS)
                       </p>
                     </div>
                   </div>

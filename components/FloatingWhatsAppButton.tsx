@@ -20,7 +20,7 @@ export default function FloatingWhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/254XXXXXXXXX?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
+      href="https://wa.me/254702491439?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services"
       target="_blank"
       rel="noopener noreferrer"
       className={`fixed bottom-6 right-6 z-40 group ${

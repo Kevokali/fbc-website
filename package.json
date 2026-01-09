@@ -2,6 +2,19 @@
   "name": "financial-beacon-consulting",
   "version": "1.0.0",
   "private": true,
+  "description": "A professional, responsive Next.js website for Financial Beacon Consulting (FBC), a financial consulting company based in Nairobi, Kenya.",
+  "homepage": "https://github.com/Kevokali/fbc-website#readme",
+  "bugs": {
+    "url": "https://github.com/Kevokali/fbc-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevokali/fbc-website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "next.config.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

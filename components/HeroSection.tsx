@@ -111,7 +111,7 @@ export default function HeroSection() {
           }`}
         >
           <span className="inline-block px-4 py-2 bg-emerald/20 backdrop-blur-sm border border-emerald/30 rounded-full text-emerald text-sm font-semibold mb-6 animate-float">
-            Trusted Financial Services in Nairobi
+            Trusted Financial Services in Nairobi City and Beyond
           </span>
         </div>
         
