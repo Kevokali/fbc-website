@@ -55,6 +55,7 @@ export default function HeroSection() {
         </div>
         
         <h1
+          itemProp="name"
           className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-tight tracking-tight ${
             isVisible ? 'animate-fade-in' : 'opacity-0'
           }`}
@@ -68,12 +69,13 @@ export default function HeroSection() {
         </h1>
         
         <p
+          itemProp="description"
           className={`text-2xl sm:text-3xl md:text-4xl mb-16 text-white/95 font-medium max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
             isVisible ? 'animate-fade-in' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.2s' }}
         >
-          Your Trusted Partner in Financial Clarity & Compliance
+          Your Trusted Partner in Financial Clarity & Compliance - Expert Financial Consulting Services in Nairobi, Kenya
         </p>
         
         <div

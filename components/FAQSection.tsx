@@ -63,12 +63,15 @@ export default function FAQSection() {
       />
       <section id="faq" className="py-20 bg-light-grey">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
+          <header className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
               Frequently Asked Questions
-            </h2>
-            <div className="w-24 h-1 bg-emerald mx-auto rounded-full"></div>
-          </div>
+            </h1>
+            <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-4"></div>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              Common questions about Financial Beacon Consulting services: tax compliance, accounting services, business registration, audit services, and financial advisory in Kenya
+            </p>
+          </header>
           
           <div className="space-y-4">
             {faqs.map((faq, index) => (

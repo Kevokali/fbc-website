@@ -192,16 +192,19 @@ export default function AboutSection() {
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-emerald/5 to-transparent"></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div
+        <header
           className={`text-center mb-16 ${
             isVisible ? 'animate-slide-up' : 'opacity-0'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
-            About Us
-          </h2>
-          <div className="w-24 h-1 bg-emerald mx-auto rounded-full"></div>
-        </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
+            About Financial Beacon Consulting
+          </h1>
+          <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-4"></div>
+          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
+            A Kenyan-based financial consulting firm focused on helping businesses achieve clarity, compliance, and sustainable growth through strategic financial planning, risk management, and business performance advisory services in Nairobi and beyond.
+          </p>
+        </header>
 
         {/* Company Overview */}
         <div
@@ -211,17 +214,19 @@ export default function AboutSection() {
           style={{ animationDelay: '0.1s' }}
         >
           <div className="bg-gradient-to-br from-light-grey to-emerald/5 rounded-2xl p-8 md:p-12 border border-emerald/10 shadow-lg">
-            <h3 className="text-3xl font-bold text-deep-blue mb-6 flex items-center">
+            <h2 className="text-3xl font-bold text-deep-blue mb-6 flex items-center">
               <span className="w-2 h-8 bg-emerald mr-4 rounded-full"></span>
               Company Overview
-            </h3>
+            </h2>
             <p className="text-lg text-text-primary leading-relaxed mb-6">
               Financial Beacon Consulting (FBC) is a professional consulting firm
               specializing in accounting, taxation, regulatory compliance, audit,
-              and financial advisory services. We partner with businesses and
+              and financial advisory services in Kenya. We partner with businesses and
               individual entrepreneurs to deliver reliable, compliant, and
               value-driven financial solutions that support growth, governance,
-              and long-term sustainability.
+              and long-term sustainability. Based in Nairobi, we serve clients across Kenya
+              with expertise in Strategic Financial Planning, Risk Management & Compliance,
+              Business Performance Advisory, and Training & Capacity Building.
             </p>
             <div className="bg-white/80 rounded-xl p-6 border border-emerald/20">
               <h4 className="text-xl font-semibold text-deep-blue mb-4">

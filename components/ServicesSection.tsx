@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Script from 'next/script'
 
 export default function ServicesSection() {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set())
@@ -113,29 +114,73 @@ export default function ServicesSection() {
     },
   ]
 
+  // Service schema for each service
+  const serviceSchemas = services.map((service) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.description,
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'Financial Beacon Consulting',
+      url: 'https://financialbeacon.co.ke',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Revlon Plaza, 3rd Floor, Kimathi Street',
+        addressLocality: 'Nairobi',
+        addressRegion: 'Nairobi County',
+        postalCode: '00200',
+        addressCountry: 'KE',
+      },
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Kenya',
+    },
+    serviceType: service.title,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'KES',
+    },
+  }))
+
   return (
-    <section
-      ref={sectionRef}
-      id="services"
-      className="py-20 bg-light-grey relative overflow-hidden"
-    >
+    <>
+      {serviceSchemas.map((schema, index) => (
+        <Script
+          key={index}
+          id={`service-schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
+      <section
+        ref={sectionRef}
+        id="services"
+        className="py-20 bg-light-grey relative overflow-hidden"
+        itemScope
+        itemType="https://schema.org/Service"
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
             Our Services
-          </h2>
+          </h1>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-4"></div>
           <p className="text-center text-text-secondary text-lg max-w-2xl mx-auto">
-            Comprehensive financial consulting services tailored to your business
-            needs
+            Comprehensive financial consulting services in Kenya: Strategic Financial Planning, Risk Management & Compliance, Business Performance Advisory, Tax Compliance, Accounting, Audit Services, Business Registration, and Trade Finance tailored to your business needs
           </p>
-        </div>
+        </header>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <article
               key={index}
               data-index={index}
+              itemScope
+              itemType="https://schema.org/Service"
               className={`bg-white rounded-xl shadow-md p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-emerald/30 group ${
                 visibleCards.has(index) ? 'animate-slide-up' : 'opacity-0'
               }`}
@@ -150,10 +195,18 @@ export default function ServicesSection() {
                 <div className="w-12 h-1 bg-emerald group-hover:w-16 transition-all duration-300"></div>
               </div>
               
-              <h3 className="text-2xl font-semibold text-deep-blue mb-3 group-hover:text-emerald transition-colors duration-300">
+              <h2 
+                itemProp="name"
+                className="text-2xl font-semibold text-deep-blue mb-3 group-hover:text-emerald transition-colors duration-300"
+              >
                 {service.title}
-              </h3>
-              <p className="text-text-secondary mb-6">{service.description}</p>
+              </h2>
+              <p 
+                itemProp="description"
+                className="text-text-secondary mb-6"
+              >
+                {service.description}
+              </p>
               
               <ul className="space-y-3">
                 {service.items.map((item, itemIndex) => (
@@ -170,10 +223,11 @@ export default function ServicesSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
       </div>
     </section>
+    </>
   )
 }

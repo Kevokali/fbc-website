@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Script from 'next/script'
 
 export default function TestimonialsSection() {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set())
@@ -51,25 +52,72 @@ export default function TestimonialsSection() {
     },
   ]
 
+  // Review Schema for SEO
+  const reviewSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Financial Beacon Consulting',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      reviewCount: testimonials.length.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: testimonials.map((testimonial) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: testimonial.name,
+        worksFor: {
+          '@type': 'Organization',
+          name: testimonial.company,
+        },
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: testimonial.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      reviewBody: testimonial.content,
+    })),
+  }
+
   return (
-    <section
-      ref={sectionRef}
-      id="testimonials"
-      className="py-20 bg-white relative overflow-hidden"
-    >
+    <>
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(reviewSchema),
+        }}
+      />
+      <section
+        ref={sectionRef}
+        id="testimonials"
+        className="py-20 bg-white relative overflow-hidden"
+        itemScope
+        itemType="https://schema.org/Organization"
+      >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <header className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
             What Our Clients Say
           </h2>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full"></div>
-        </div>
+          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
+            Trusted by businesses across Kenya for professional financial consulting, tax compliance, and accounting services in Nairobi
+          </p>
+        </header>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <article
               key={index}
               data-index={index}
+              itemScope
+              itemType="https://schema.org/Review"
               className={`bg-light-grey rounded-xl shadow-md p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent hover:border-emerald/30 group ${
                 visibleCards.has(index) ? 'animate-slide-up' : 'opacity-0'
               }`}
@@ -88,19 +136,43 @@ export default function TestimonialsSection() {
                   </svg>
                 ))}
               </div>
-              <p className="text-text-primary mb-6 italic leading-relaxed group-hover:text-deep-blue transition-colors duration-300">
+              <p 
+                itemProp="reviewBody"
+                className="text-text-primary mb-6 italic leading-relaxed group-hover:text-deep-blue transition-colors duration-300"
+              >
                 &ldquo;{testimonial.content}&rdquo;
               </p>
               <div className="border-t border-emerald/20 pt-4">
-                <p className="font-semibold text-deep-blue group-hover:text-emerald transition-colors duration-300">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-text-secondary">{testimonial.company}</p>
+                <div itemScope itemType="https://schema.org/Person">
+                  <p 
+                    itemProp="name"
+                    className="font-semibold text-deep-blue group-hover:text-emerald transition-colors duration-300"
+                  >
+                    {testimonial.name}
+                  </p>
+                  <p 
+                    itemProp="worksFor"
+                    itemScope
+                    itemType="https://schema.org/Organization"
+                    className="text-sm text-text-secondary"
+                  >
+                    <span itemProp="name">{testimonial.company}</span>
+                  </p>
+                </div>
+                <div 
+                  itemScope
+                  itemType="https://schema.org/Rating"
+                  className="hidden"
+                >
+                  <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
+                  <meta itemProp="bestRating" content="5" />
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
     </section>
+    </>
   )
 }

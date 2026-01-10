@@ -47,7 +47,9 @@ export default function HomeSection() {
           <p className="text-lg md:text-xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
             Your trusted partner for comprehensive financial services in Nairobi, Kenya. 
             We provide expert accounting, tax compliance, business registration, and 
-            financial advisory services to help your business thrive.
+            financial advisory services to help your business thrive. Specializing in 
+            Strategic Financial Planning, Risk Management & Compliance, Business Performance 
+            Advisory, and Training & Capacity Building for Kenyan businesses.
           </p>
           
           <div

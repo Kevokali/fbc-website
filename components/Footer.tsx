@@ -16,8 +16,8 @@ export default function Footer() {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Financial Beacon Consulting',
-            url: 'https://www.financialbeaconconsulting.com',
-            logo: 'https://www.financialbeaconconsulting.com/logo.png',
+            url: 'https://financialbeacon.co.ke',
+            logo: 'https://financialbeacon.co.ke/logo/logo.png',
             contactPoint: {
               '@type': 'ContactPoint',
               telephone: '+254-754-029-431',
