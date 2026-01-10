@@ -606,7 +606,7 @@ const blogPosts: BlogPost[] = [
 ]
 
 export default function KnowledgeHubSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true) // Start visible for mobile compatibility
   const [expandedPost, setExpandedPost] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
@@ -625,6 +625,14 @@ export default function KnowledgeHubSection() {
   })
 
   useEffect(() => {
+    // Set visible immediately for mobile compatibility
+    setIsVisible(true)
+    
+    // Also use IntersectionObserver for animation on desktop
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -633,7 +641,10 @@ export default function KnowledgeHubSection() {
           }
         })
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.01, // Lower threshold for mobile
+        rootMargin: '50px' // Add margin to trigger earlier
+      }
     )
 
     const currentRef = sectionRef.current
@@ -714,36 +725,22 @@ export default function KnowledgeHubSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div
-            className={`inline-block mb-4 ${
-              isVisible ? 'animate-fade-in' : 'opacity-0'
-            }`}
-          >
+          <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-emerald/10 text-emerald rounded-full text-sm font-semibold">
               Knowledge Hub
             </span>
           </div>
-          <h1
-            className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-deep-blue ${
-              isVisible ? 'animate-fade-in' : 'opacity-0'
-            }`}
-            style={{ animationDelay: '0.1s' }}
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-deep-blue">
             Expert Financial Insights
           </h1>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-6"></div>
-          <p
-            className={`text-xl text-text-secondary max-w-3xl mx-auto ${
-              isVisible ? 'animate-fade-in' : 'opacity-0'
-            }`}
-            style={{ animationDelay: '0.2s' }}
-          >
+          <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto px-4">
             Practical guides and expert advice to help your business navigate tax compliance, audits, and financial planning in Kenya.
           </p>
         </div>
 
         {/* Search and Filter Section */}
-        <div className={`mb-12 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+        <div className="mb-12">
           {/* Search Bar */}
           <div className="mb-6">
             <div className="relative max-w-2xl mx-auto">
@@ -752,7 +749,7 @@ export default function KnowledgeHubSection() {
                 placeholder="Search articles by title, topic, or keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-4 pl-14 bg-white border-2 border-emerald/20 rounded-xl focus:border-emerald focus:outline-none focus:ring-2 focus:ring-emerald/20 text-deep-blue placeholder:text-text-secondary transition-all duration-300 shadow-md hover:shadow-lg"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 pl-12 sm:pl-14 bg-white border-2 border-emerald/20 rounded-xl focus:border-emerald focus:outline-none focus:ring-2 focus:ring-emerald/20 text-deep-blue placeholder:text-text-secondary transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
               />
               <svg
                 className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-emerald"
@@ -778,12 +775,12 @@ export default function KnowledgeHubSection() {
           </div>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
                   selectedCategory === category
                     ? 'bg-emerald text-white shadow-lg shadow-emerald/30'
                     : 'bg-white text-deep-blue border-2 border-emerald/20 hover:border-emerald/40 hover:bg-emerald/5'
@@ -795,48 +792,43 @@ export default function KnowledgeHubSection() {
           </div>
 
           {/* Results Count */}
-          {filteredPosts.length !== blogPosts.length && (
+          {filteredPosts.length !== blogPosts.length && filteredPosts.length > 0 && (
             <div className="text-center mt-4">
-              <p className="text-text-secondary">
+              <p className="text-text-secondary text-sm sm:text-base">
                 Showing <span className="font-semibold text-emerald">{filteredPosts.length}</span> of{' '}
                 <span className="font-semibold text-deep-blue">{blogPosts.length}</span> articles
               </p>
             </div>
           )}
+        </div>
 
-          {/* No Results Message */}
-          {filteredPosts.length === 0 && (
+        {/* Blog Posts */}
+        <div className="space-y-6 sm:space-y-8">
+          {filteredPosts.length === 0 ? (
             <div className="text-center py-12 bg-white rounded-xl border-2 border-emerald/20">
               <svg className="w-16 h-16 text-emerald/50 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <p className="text-xl font-semibold text-deep-blue mb-2">No articles found</p>
-              <p className="text-text-secondary">Try adjusting your search or filter criteria</p>
+              <p className="text-text-secondary mb-4">Try adjusting your search or filter criteria</p>
               <button
                 onClick={() => {
                   setSearchQuery('')
                   setSelectedCategory('All')
                 }}
-                className="mt-4 px-6 py-2 bg-emerald text-white rounded-lg hover:bg-emerald-dark transition-colors"
+                className="px-6 py-2 bg-emerald text-white rounded-lg hover:bg-emerald-dark transition-colors"
               >
                 Clear Filters
               </button>
             </div>
-          )}
-        </div>
-
-        {/* Blog Posts */}
-        <div className="space-y-8">
-          {filteredPosts.map((post, index) => {
-            const isExpanded = expandedPost === post.id
-            return (
-              <article
-                key={post.id}
-                className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald/10 hover:border-emerald/30 transform hover:-translate-y-1 ${
-                  isVisible ? 'animate-fade-in' : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-              >
+          ) : (
+            filteredPosts.map((post, index) => {
+              const isExpanded = expandedPost === post.id
+              return (
+                <article
+                  key={post.id}
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald/10 hover:border-emerald/30 transform hover:-translate-y-1"
+                >
                 {/* Post Header */}
                 <div className="p-8 md:p-10">
                   <div className="flex items-start justify-between gap-4 mb-6">
@@ -975,17 +967,13 @@ export default function KnowledgeHubSection() {
                   )}
                 </div>
               </article>
-            )
-          })}
+              )
+            })
+          )}
         </div>
 
         {/* Bottom CTA */}
-        <div
-          className={`mt-16 text-center ${
-            isVisible ? 'animate-fade-in' : 'opacity-0'
-          }`}
-          style={{ animationDelay: '0.6s' }}
-        >
+        <div className="mt-16 text-center">
           <div className="bg-gradient-to-br from-deep-blue to-emerald rounded-2xl p-8 md:p-12 text-white shadow-xl">
             <h3 className="text-3xl font-bold mb-4">
               Need Personalized Financial Advice?
