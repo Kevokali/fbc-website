@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Script from 'next/script'
 
 interface BlogPost {
   id: string
@@ -654,48 +653,54 @@ export default function KnowledgeHubSection() {
   }
 
   // Generate Article schemas for all blog posts
-  const articleSchemas = blogPosts.map((post) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.metaDescription,
-    author: {
-      '@type': 'Organization',
-      name: 'Financial Beacon Consulting',
-      url: 'https://financialbeacon.co.ke',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Financial Beacon Consulting',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://financialbeacon.co.ke/logo/logo.png',
-      },
-    },
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://financialbeacon.co.ke/knowledge-hub#${post.id}`,
-    },
-    articleSection: post.category,
-    keywords: post.metaDescription,
-    inLanguage: 'en-KE',
-  }))
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    blogPosts.forEach((post) => {
+      const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description: post.metaDescription,
+        author: {
+          '@type': 'Organization',
+          name: 'Financial Beacon Consulting',
+          url: 'https://financialbeacon.co.ke',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Financial Beacon Consulting',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://financialbeacon.co.ke/logo/logo.png',
+          },
+        },
+        datePublished: new Date().toISOString(),
+        dateModified: new Date().toISOString(),
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://financialbeacon.co.ke/knowledge-hub#${post.id}`,
+        },
+        articleSection: post.category,
+        keywords: post.metaDescription,
+        inLanguage: 'en-KE',
+      }
+
+      const scriptId = `article-schema-${post.id}`
+      if (document.getElementById(scriptId)) {
+        return // Already added
+      }
+
+      const script = document.createElement('script')
+      script.id = scriptId
+      script.type = 'application/ld+json'
+      script.text = JSON.stringify(schema)
+      document.head.appendChild(script)
+    })
+  }, [])
 
   return (
-    <>
-      {articleSchemas.map((schema, index) => (
-        <Script
-          key={index}
-          id={`article-schema-${blogPosts[index].id}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema),
-          }}
-        />
-      ))}
-      <section
+    <section
         ref={sectionRef}
         id="knowledge-hub"
         className="py-20 bg-gradient-to-br from-white via-light-grey to-white relative overflow-hidden"
@@ -1006,6 +1011,5 @@ export default function KnowledgeHubSection() {
         </div>
       </div>
     </section>
-    </>
   )
 }
