@@ -14,7 +14,7 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Luke Weke',
+    name: 'CPA Weke Luke',
     role: 'Director & Lead Consultant',
     qualifications: 'CPA | BCom (Finance) | MSc (Finance) Ongoing',
     phone: '0702491439',
