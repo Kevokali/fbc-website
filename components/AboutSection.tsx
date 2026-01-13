@@ -198,11 +198,11 @@ export default function AboutSection() {
           }`}
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-deep-blue">
-            About Financial Beacon Consulting
+            About Our Financial Beacon Consulting
           </h1>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-4"></div>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            A Kenyan-based financial consulting firm focused on helping businesses achieve clarity, compliance, and sustainable growth through strategic financial planning, risk management, and business performance advisory services in Nairobi and beyond.
+            Financial Beacon Consulting (FBC) is a leading financial consulting firm in Nairobi, Kenya, dedicated to helping Kenyan businesses achieve clarity, compliance, and sustainable growth. As a trusted financial consulting firm in Kenya, we specialize in strategic financial planning, tax compliance, accounting services, business registration, KRA compliance, risk management, and business performance advisory services for businesses across Nairobi and Kenya.
           </p>
         </header>
 

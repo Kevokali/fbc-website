@@ -32,7 +32,7 @@ export default function ServicesSection() {
     {
       title: 'Business Registration',
       description:
-        'Comprehensive business registration services for various entity types',
+        'Comprehensive business registration services in Nairobi, Kenya for Limited Companies, Sole Proprietorships, Partnerships, NGOs, and Foundations. Expert business registration services for Kenyan businesses.',
       icon: (
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -48,7 +48,7 @@ export default function ServicesSection() {
     {
       title: 'Tax & Statutory Compliance',
       description:
-        'Expert tax services ensuring full compliance with KRA requirements',
+        'Expert tax compliance services in Nairobi, Kenya ensuring full KRA compliance. Leading tax consulting firm in Kenya for KRA returns, withholding tax, rental income tax, and statutory filings.',
       icon: (
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -65,7 +65,7 @@ export default function ServicesSection() {
     {
       title: 'Accounting & Financial Management',
       description:
-        'Complete accounting solutions for efficient financial management',
+        'Complete accounting services in Nairobi, Kenya for efficient financial management. Professional accounting firm in Kenya offering bookkeeping, financial forecasts, budgets, and financial reporting.',
       icon: (
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -82,7 +82,7 @@ export default function ServicesSection() {
     {
       title: 'Audit, Risk & Advisory',
       description:
-        'Strategic advisory and audit services to strengthen your business',
+        'Strategic financial advisory and audit services in Nairobi, Kenya to strengthen your business. Leading audit and risk management consulting firm in Kenya for internal audits, risk assessment, and financial training.',
       icon: (
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -99,7 +99,7 @@ export default function ServicesSection() {
     {
       title: 'Trade Finance & Guarantees',
       description:
-        'Financial instruments and support for trade and business operations',
+        'Trade finance and guarantee services in Nairobi, Kenya for business operations. Expert financial consulting firm in Kenya for tender securities, performance bonds, and advance payment guarantees.',
       icon: (
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -170,7 +170,7 @@ export default function ServicesSection() {
           </h1>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-4"></div>
           <p className="text-center text-text-secondary text-lg max-w-2xl mx-auto">
-            Comprehensive financial consulting services in Kenya: Strategic Financial Planning, Risk Management & Compliance, Business Performance Advisory, Tax Compliance, Accounting, Audit Services, Business Registration, and Trade Finance tailored to your business needs
+            As a leading financial consulting firm in Nairobi, Kenya, we provide comprehensive financial consulting services including Strategic Financial Planning, Risk Management & Compliance, Business Performance Advisory, Tax Compliance, Accounting Services, Audit Services, Business Registration, and Trade Finance tailored to Kenyan businesses
           </p>
         </header>
         

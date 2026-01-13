@@ -19,7 +19,7 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
     url: baseUrl,
     logo: `${baseUrl}/logo/logo.png`,
     image: `${baseUrl}/logo/logo.png`,
-    description: 'Financial Beacon Consulting (FBC) is a Kenyan-based financial consulting firm focused on helping businesses achieve clarity, compliance, and sustainable growth through strategic financial planning, risk management, compliance, and business performance advisory services.',
+    description: 'Financial Beacon Consulting (FBC) is a leading financial consulting firm in Nairobi, Kenya, specializing in strategic financial planning, tax compliance, accounting services, business registration, and KRA compliance. Trusted financial consulting firm in Kenya for expert financial advisory services.',
     foundingDate: '2020',
     address: {
       '@type': 'PostalAddress',

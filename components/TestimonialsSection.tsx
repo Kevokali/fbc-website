@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
           </h2>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-6"></div>
           <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
-            Trusted by businesses across Kenya for professional financial consulting, tax compliance, and accounting services in Nairobi. Join hundreds of satisfied clients who have transformed their financial operations with FBC.
+            Trusted financial consulting firm in Nairobi, Kenya. Trusted by businesses across Kenya for professional financial consulting, tax compliance, accounting services, and KRA compliance in Nairobi. Join hundreds of satisfied clients who have transformed their financial operations with our financial consulting firm in Kenya.
           </p>
           {/* Aggregate Rating Display */}
           <div className="mt-6 flex items-center justify-center gap-2">

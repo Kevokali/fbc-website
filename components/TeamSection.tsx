@@ -189,7 +189,7 @@ export default function TeamSection() {
                       /* Actual image - circular frame, showing full face */
                       <Image
                         src={member.image}
-                        alt={member.name}
+                        alt={`${member.name} - Financial Consultant at Financial Beacon Consulting, Leading Financial Consulting Firm in Nairobi, Kenya`}
                         fill
                         className="object-cover pointer-events-none rounded-full"
                         data-protected="true"

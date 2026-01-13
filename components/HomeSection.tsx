@@ -41,15 +41,11 @@ export default function HomeSection() {
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-deep-blue">
-            Welcome to Financial Beacon Consulting
+            Financial Beacon Consulting
           </h2>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-6"></div>
           <p className="text-lg md:text-xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
-            Your trusted partner for comprehensive financial services in Nairobi, Kenya. 
-            We provide expert accounting, tax compliance, business registration, and 
-            financial advisory services to help your business thrive. Specializing in 
-            Strategic Financial Planning, Risk Management & Compliance, Business Performance 
-            Advisory, and Training & Capacity Building for Kenyan businesses.
+            As a premier financial consulting firm in Nairobi, Kenya, we are your trusted partner for comprehensive financial services. Our financial consulting firm in Kenya provides expert accounting services, tax compliance, business registration, and financial advisory services to help your business thrive. Specializing in Strategic Financial Planning, Risk Management & Compliance, Business Performance Advisory, KRA Compliance, and Training & Capacity Building for Kenyan businesses across Nairobi and beyond.
           </p>
           
           <div

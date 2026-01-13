@@ -49,7 +49,7 @@ export default function Navbar() {
               <div className="relative bg-white/10 backdrop-blur-md rounded-lg p-2 border border-emerald/30 group-hover:border-emerald/60 transition-all duration-300 group-hover:bg-white/15">
                 <Image
                   src="/logo/logo.png"
-                  alt="Financial Beacon Consulting Logo"
+                  alt="Financial Beacon Consulting - Leading Financial Consulting Firm in Nairobi, Kenya"
                   width={150}
                   height={50}
                   className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"

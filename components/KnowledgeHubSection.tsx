@@ -731,11 +731,11 @@ export default function KnowledgeHubSection() {
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-deep-blue">
-            Expert Financial Insights
+            Expert Financial Insights for Kenyan Businesses
           </h1>
           <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-6"></div>
           <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto px-4">
-            Practical guides and expert advice to help your business navigate tax compliance, audits, and financial planning in Kenya.
+            Practical guides and expert advice from our financial consulting firm in Nairobi, Kenya to help your business navigate tax compliance, KRA compliance, audits, and financial planning in Kenya. Expert financial consulting insights for Kenyan businesses.
           </p>
         </div>
 

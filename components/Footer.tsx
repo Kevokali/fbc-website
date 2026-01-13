@@ -54,7 +54,7 @@ export default function Footer() {
                     <div className="relative bg-gradient-to-br from-emerald/20 to-emerald/10 backdrop-blur-md rounded-xl p-3 border-2 border-emerald/30 hover:border-emerald/60 transition-all duration-300 group">
                       <Image
                         src="/logo/logo.png"
-                        alt="Financial Beacon Consulting Logo"
+                        alt="Financial Beacon Consulting - Top Financial Consulting Firm in Nairobi, Kenya"
                         width={60}
                         height={60}
                         className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"

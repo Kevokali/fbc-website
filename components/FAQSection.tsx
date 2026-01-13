@@ -8,34 +8,34 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: 'What services does Financial Beacon Consulting offer?',
+      question: 'What services does your financial consulting firm in Kenya offer?',
       answer:
-        'We offer comprehensive financial consulting services including business registration, tax and statutory compliance, accounting and financial management, audit and risk advisory, and trade finance & guarantees.',
+        'As a leading financial consulting firm in Nairobi, Kenya, we offer comprehensive financial consulting services including business registration in Kenya, tax and statutory compliance, KRA compliance services, accounting and financial management, audit and risk advisory, and trade finance & guarantees for Kenyan businesses.',
     },
     {
-      question: 'How long does business registration take?',
+      question: 'How long does business registration take in Kenya?',
       answer:
-        'The timeline for business registration varies depending on the entity type. Limited companies typically take 7-14 business days, while sole proprietorships can be completed within 3-5 business days.',
+        'The timeline for business registration in Kenya varies depending on the entity type. Limited companies typically take 7-14 business days, while sole proprietorships can be completed within 3-5 business days. Our financial consulting firm in Nairobi can expedite the process.',
     },
     {
-      question: 'Do you provide tax filing services for individuals?',
+      question: 'Do you provide tax filing services for individuals and businesses in Kenya?',
       answer:
-        'Yes, we provide tax filing services for both individuals and businesses. Our services include KRA returns, withholding tax, rental income tax, and advance tax filings.',
+        'Yes, as a trusted financial consulting firm in Kenya, we provide tax filing services for both individuals and businesses. Our services include KRA returns, withholding tax, rental income tax, and advance tax filings for clients across Nairobi and Kenya.',
     },
     {
-      question: 'What accounting software do you support?',
+      question: 'What accounting software does your financial consulting firm in Kenya support?',
       answer:
-        'We provide training and support for Tally and QuickBooks. We can also assist with bookkeeping and financial management using these platforms.',
+        'Our financial consulting firm in Nairobi, Kenya provides training and support for Tally and QuickBooks. We can also assist with bookkeeping and financial management using these platforms for Kenyan businesses.',
     },
     {
-      question: 'How can I book a consultation?',
+      question: 'How can I book a consultation with your financial consulting firm in Kenya?',
       answer:
-        'You can book a consultation by contacting us via phone, email, or by filling out the contact form on our website. We typically respond within 24 hours.',
+        'You can book a consultation with our financial consulting firm in Kenya by contacting us via phone, email, WhatsApp, or by filling out the contact form on our website. We typically respond within 24 hours. Our office is located in Nairobi, Kenya.',
     },
     {
-      question: 'Do you provide services outside Nairobi?',
+      question: 'Do you provide financial consulting services outside Nairobi?',
       answer:
-        'While our main office is in Nairobi, we provide remote consulting services and can arrange on-site visits for clients across Kenya when needed.',
+        'Yes, while our main office is in Nairobi, we provide remote financial consulting services and can arrange on-site visits for clients across Kenya when needed. As a leading financial consulting firm in Kenya, we serve businesses throughout the country.',
     },
   ]
 
@@ -69,7 +69,7 @@ export default function FAQSection() {
             </h1>
             <div className="w-24 h-1 bg-emerald mx-auto rounded-full mb-4"></div>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Common questions about Financial Beacon Consulting services: tax compliance, accounting services, business registration, audit services, and financial advisory in Kenya
+              Common questions about our financial consulting firm in Nairobi, Kenya: tax compliance, KRA compliance, accounting services, business registration, audit services, and financial advisory services for Kenyan businesses
             </p>
           </header>
           
