@@ -14,6 +14,16 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true, // 301 redirect for SEO
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
