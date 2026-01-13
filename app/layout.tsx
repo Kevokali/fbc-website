@@ -112,6 +112,7 @@ export const metadata: Metadata = {
     'geo.placename': 'Nairobi',
     'geo.position': '-1.2921;36.8219',
     'ICBM': '-1.2921, 36.8219',
+    'msvalidate.01': '8123BA7C9E7D9DE8378967525B0FA178',
   },
 }
 
