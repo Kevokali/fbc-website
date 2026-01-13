@@ -1,15 +1,23 @@
 # robots.txt for Financial Beacon Consulting
 # https://financialbeaconconsulting.co.ke/robots.txt
 
+# Allow all search engines to crawl
 User-agent: *
 Allow: /
+
+# Optimize for Google Bot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Optimize for Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
 
 # Disallow admin or private areas (if any)
 # Disallow: /admin/
 # Disallow: /api/
 
-# Sitemap location
+# Sitemap location - Critical for fast indexing
 Sitemap: https://financialbeaconconsulting.co.ke/sitemap.xml
-
-# Crawl-delay (optional, adjust as needed)
-# Crawl-delay: 1
