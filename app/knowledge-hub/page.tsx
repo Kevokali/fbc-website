@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Knowledge Hub | Financial Beacon Consulting',
     description: 'Expert insights on tax compliance, financial audits, and business planning for SMEs in Kenya.',
-    url: 'https://financialbeacon.co.ke/knowledge-hub',
+    url: 'https://financialbeaconconsulting.co.ke/knowledge-hub',
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke/knowledge-hub',
+    canonical: 'https://financialbeaconconsulting.co.ke/knowledge-hub',
   },
 }
 

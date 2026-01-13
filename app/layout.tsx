@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -10,31 +11,37 @@ import SEOStructuredData from '@/components/SEOStructuredData'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://financialbeacon.co.ke'),
+  metadataBase: new URL('https://financialbeaconconsulting.co.ke'),
   title: {
     default: 'Financial Beacon Consulting (FBC) | Strategic Financial Planning & Advisory Services in Kenya',
     template: '%s | Financial Beacon Consulting',
   },
   description: 'Financial Beacon Consulting (FBC) is a Kenyan-based financial consulting firm helping businesses achieve clarity, compliance, and sustainable growth through strategic financial planning, risk management, compliance, and business performance advisory services in Nairobi and beyond.',
   keywords: [
-    'financial consulting Kenya',
-    'financial consulting Nairobi',
+    'financial consulting firm in Kenya',
+    'financial consulting firm in Nairobi',
     'strategic financial planning Kenya',
     'risk management consulting Kenya',
     'business performance advisory Kenya',
     'tax compliance services Kenya',
-    'KRA compliance services',
+    'KRA compliance services in Kenya',
+    'KRA compliance services in Nairobi',
     'accounting services Nairobi',
-    'financial advisory services Kenya',
-    'business financial planning',
-    'compliance consulting Kenya',
-    'financial training Kenya',
-    'Beacon financial consulting',
+    'financial advisory services in Kenya',
+    'financial advisory services in Nairobi',
+    'business financial planning in Kenya',
+    'business financial planning in Nairobi',
+    'compliance consulting in Kenya',
+    'compliance consulting in Nairobi',
+    'financial training in Kenya',
+    'financial training in Nairobi',
+    'Beacon financial consulting in Kenya',
+    'Beacon financial consulting in Nairobi',
     'FBC Kenya',
-    'financial clarity Kenya',
-    'sustainable business growth Kenya',
+    'financial clarity in Kenya',
+    'sustainable business growth in Kenya',
   ],
-  authors: [{ name: 'Financial Beacon Consulting', url: 'https://financialbeacon.co.ke' }],
+  authors: [{ name: 'Financial Beacon Consulting', url: 'https://financialbeaconconsulting.co.ke' }],
   creator: 'Financial Beacon Consulting',
   publisher: 'Financial Beacon Consulting',
   formatDetection: {
@@ -50,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_KE',
-    url: 'https://financialbeacon.co.ke',
+    url: 'https://financialbeaconconsulting.co.ke',
     siteName: 'Financial Beacon Consulting',
     title: 'Financial Beacon Consulting (FBC) | Strategic Financial Planning & Advisory Services in Kenya',
     description: 'Helping Kenyan businesses achieve clarity, compliance, and sustainable growth through strategic financial planning, risk management, and business performance advisory services.',
@@ -82,7 +89,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke',
+    canonical: 'https://financialbeaconconsulting.co.ke',
   },
   category: 'Financial Services',
   classification: 'Financial Consulting',
@@ -106,6 +113,19 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-rounded.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-rounded.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/logo/favicon-rounded.png" />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-X712M38L3L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-X712M38L3L');
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         <SEOStructuredData type="home" />

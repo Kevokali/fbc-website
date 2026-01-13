@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Financial Beacon Consulting | FBC Kenya',
     description: 'Get in touch with FBC for financial consulting services. Located in Nairobi, Kenya. WhatsApp, email, or call us today.',
-    url: 'https://financialbeacon.co.ke/contact',
+    url: 'https://financialbeaconconsulting.co.ke/contact',
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke/contact',
+    canonical: 'https://financialbeaconconsulting.co.ke/contact',
   },
 }
 

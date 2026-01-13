@@ -14,8 +14,8 @@ export default function ContactSection() {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Financial Beacon Consulting',
-            url: 'https://financialbeacon.co.ke',
-            logo: 'https://financialbeacon.co.ke/logo/logo.png',
+            url: 'https://financialbeaconconsulting.co.ke',
+            logo: 'https://financialbeaconconsulting.co.ke/logo/logo.png',
             contactPoint: {
               '@type': 'ContactPoint',
               telephone: '+254-754-029-431',

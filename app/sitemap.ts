@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://financialbeacon.co.ke'
+  const baseUrl = 'https://financialbeaconconsulting.co.ke'
   const currentDate = new Date().toISOString()
 
   return [

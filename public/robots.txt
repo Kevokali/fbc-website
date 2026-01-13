@@ -1,5 +1,5 @@
 # robots.txt for Financial Beacon Consulting
-# https://financialbeacon.co.ke/robots.txt
+# https://financialbeaconconsulting.co.ke/robots.txt
 
 User-agent: *
 Allow: /
@@ -9,7 +9,7 @@ Allow: /
 # Disallow: /api/
 
 # Sitemap location
-Sitemap: https://financialbeacon.co.ke/sitemap.xml
+Sitemap: https://financialbeaconconsulting.co.ke/sitemap.xml
 
 # Crawl-delay (optional, adjust as needed)
 # Crawl-delay: 1

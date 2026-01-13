@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Our Team | Financial Beacon Consulting',
     description: 'Meet the expert financial consultants at FBC: Luke Weke and CPA Calleb Masese. Experienced professionals helping Kenyan businesses achieve financial success.',
-    url: 'https://financialbeacon.co.ke/team',
+    url: 'https://financialbeaconconsulting.co.ke/team',
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke/team',
+    canonical: 'https://financialbeaconconsulting.co.ke/team',
   },
 }
 

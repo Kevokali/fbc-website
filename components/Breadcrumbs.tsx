@@ -13,7 +13,7 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
-  const baseUrl = 'https://financialbeacon.co.ke'
+  const baseUrl = 'https://financialbeaconconsulting.co.ke'
 
   // Breadcrumb Schema
   const breadcrumbSchema = {

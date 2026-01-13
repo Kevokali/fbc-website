@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Client Testimonials | Financial Beacon Consulting',
     description: 'Read what our clients say about FBC\'s financial consulting services in Kenya.',
-    url: 'https://financialbeacon.co.ke/testimonials',
+    url: 'https://financialbeaconconsulting.co.ke/testimonials',
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke/testimonials',
+    canonical: 'https://financialbeaconconsulting.co.ke/testimonials',
   },
 }
 

@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Financial Consulting Services in Kenya | FBC',
     description: 'Strategic Financial Planning, Risk Management, Compliance, Business Performance Advisory, and Training services for Kenyan businesses.',
-    url: 'https://financialbeacon.co.ke/services',
+    url: 'https://financialbeaconconsulting.co.ke/services',
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke/services',
+    canonical: 'https://financialbeaconconsulting.co.ke/services',
   },
 }
 

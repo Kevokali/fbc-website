@@ -7,7 +7,7 @@ interface SEOStructuredDataProps {
 }
 
 export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataProps) {
-  const baseUrl = 'https://financialbeacon.co.ke'
+  const baseUrl = 'https://financialbeaconconsulting.co.ke'
 
   // Core Organization Schema
   const organizationSchema = {

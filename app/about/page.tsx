@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Financial Beacon Consulting | FBC Kenya',
     description: 'A Kenyan-based financial consulting firm focused on helping businesses achieve clarity, compliance, and sustainable growth.',
-    url: 'https://financialbeacon.co.ke/about',
+    url: 'https://financialbeaconconsulting.co.ke/about',
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke/about',
+    canonical: 'https://financialbeaconconsulting.co.ke/about',
   },
 }
 

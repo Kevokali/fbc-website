@@ -123,7 +123,7 @@ export default function ServicesSection() {
     provider: {
       '@type': 'ProfessionalService',
       name: 'Financial Beacon Consulting',
-      url: 'https://financialbeacon.co.ke',
+      url: 'https://financialbeaconconsulting.co.ke',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Revlon Plaza, 3rd Floor, Kimathi Street',

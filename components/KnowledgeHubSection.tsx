@@ -676,21 +676,21 @@ export default function KnowledgeHubSection() {
         author: {
           '@type': 'Organization',
           name: 'Financial Beacon Consulting',
-          url: 'https://financialbeacon.co.ke',
+          url: 'https://financialbeaconconsulting.co.ke',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Financial Beacon Consulting',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://financialbeacon.co.ke/logo/logo.png',
+            url: 'https://financialbeaconconsulting.co.ke/logo/logo.png',
           },
         },
         datePublished: new Date().toISOString(),
         dateModified: new Date().toISOString(),
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://financialbeacon.co.ke/knowledge-hub#${post.id}`,
+          '@id': `https://financialbeaconconsulting.co.ke/knowledge-hub#${post.id}`,
         },
         articleSection: post.category,
         keywords: post.metaDescription,

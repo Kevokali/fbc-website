@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Financial Beacon Consulting | Trusted Financial Services in Nairobi City and Beyond',
     description: 'Helping Kenyan businesses achieve clarity, compliance, and sustainable growth through strategic financial planning, risk management, and business performance advisory services.',
-    url: 'https://financialbeacon.co.ke/home',
+    url: 'https://financialbeaconconsulting.co.ke/home',
   },
   alternates: {
-    canonical: 'https://financialbeacon.co.ke/home',
+    canonical: 'https://financialbeaconconsulting.co.ke/home',
   },
 }
 
