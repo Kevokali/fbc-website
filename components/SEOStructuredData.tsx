@@ -17,8 +17,19 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
     name: 'Financial Beacon Consulting',
     alternateName: 'FBC',
     url: baseUrl,
-    logo: `${baseUrl}/logo/logo.png`,
-    image: `${baseUrl}/logo/logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/logo/logo.png`,
+      width: 1200,
+      height: 400,
+      contentUrl: `${baseUrl}/logo/logo.png`,
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/logo/logo.png`,
+      width: 1200,
+      height: 400,
+    },
     description: 'Financial Beacon Consulting (FBC) is a leading financial consulting firm in Nairobi, Kenya, specializing in strategic financial planning, tax compliance, accounting services, business registration, and KRA compliance. Trusted financial consulting firm in Kenya for expert financial advisory services.',
     foundingDate: '2020',
     address: {
@@ -84,7 +95,18 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
     '@type': 'LocalBusiness',
     '@id': `${baseUrl}#localbusiness`,
     name: 'Financial Beacon Consulting',
-    image: `${baseUrl}/logo/logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/logo/logo.png`,
+      width: 1200,
+      height: 400,
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/logo/logo.png`,
+      width: 1200,
+      height: 400,
+    },
     url: baseUrl,
     telephone: '+254-754-029-431',
     email: 'financialbeconconsulting@gmail.com',
@@ -271,8 +293,37 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
     ],
   }
 
+  // Standalone Organization Schema (for Google logo display)
+  const standaloneOrganizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${baseUrl}#org`,
+    name: 'Financial Beacon Consulting',
+    alternateName: 'FBC',
+    url: baseUrl,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/logo/logo.png`,
+      width: 1200,
+      height: 400,
+      contentUrl: `${baseUrl}/logo/logo.png`,
+    },
+    sameAs: [
+      'https://www.linkedin.com/in/cpa-weke-ochieng-luke-174b09127/',
+      'https://x.com/wekeluke1',
+      'https://www.tiktok.com/@fbc610',
+    ],
+  }
+
   return (
     <>
+      <Script
+        id="standalone-organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(standaloneOrganizationSchema),
+        }}
+      />
       <Script
         id="organization-schema-seo"
         type="application/ld+json"

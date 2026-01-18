@@ -92,6 +92,12 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
+              href="/login"
+              className="px-4 py-2 text-white hover:text-emerald transition-colors duration-300 font-medium"
+            >
+              Client Login
+            </Link>
+            <Link
               href="/contact"
               className="px-6 py-2 bg-emerald hover:bg-emerald/90 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-emerald/50"
             >
@@ -139,6 +145,13 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/login"
+                className="px-6 py-2 border-2 border-emerald text-emerald hover:bg-emerald hover:text-white font-semibold rounded-lg transition-all duration-300 text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Client Login
+              </Link>
               <Link
                 href="/contact"
                 className="px-6 py-2 bg-emerald hover:bg-emerald/90 text-white font-semibold rounded-lg transition-all duration-300 text-center"

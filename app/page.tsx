@@ -1,5 +1,6 @@
 import HeroSection from '@/components/HeroSection'
 import HomeSection from '@/components/HomeSection'
+import WeAreOpenSection from '@/components/WeAreOpenSection'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootPage() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <WeAreOpenSection />
       <HomeSection />
     </main>
   )

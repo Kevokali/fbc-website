@@ -28,8 +28,10 @@ module.exports = {
         'text-primary': '#333333',
         'text-secondary': '#666666',
         
-        // Legacy support (will be phased out)
-        'gold': '#2A9D8F', // Replaced with emerald for finance theme
+        // Accent - Gold
+        'gold': '#D4AF37',
+        'gold-light': '#E5C158',
+        'gold-dark': '#B8941F',
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out',

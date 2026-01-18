@@ -128,6 +128,9 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-rounded.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-rounded.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/logo/favicon-rounded.png" />
+        {/* Logo for Google Search */}
+        <link rel="logo" href="https://financialbeaconconsulting.co.ke/logo/logo.png" />
+        <meta itemProp="logo" content="https://financialbeaconconsulting.co.ke/logo/logo.png" />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-X712M38L3L"
