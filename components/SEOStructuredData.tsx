@@ -9,6 +9,8 @@ interface SEOStructuredDataProps {
 export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataProps) {
   const baseUrl = 'https://financialbeaconconsulting.co.ke'
 
+  const logoUrl = `${baseUrl}/logo/logo.png`
+
   // Core Organization Schema
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -17,8 +19,11 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
     name: 'Financial Beacon Consulting',
     alternateName: 'FBC',
     url: baseUrl,
-    logo: `${baseUrl}/logo/logo.png`,
-    image: `${baseUrl}/logo/logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: logoUrl,
+    },
+    image: logoUrl,
     description: 'Financial Beacon Consulting (FBC) is a leading financial consulting firm in Nairobi, Kenya, specializing in strategic financial planning, tax compliance, accounting services, business registration, and KRA compliance. Trusted financial consulting firm in Kenya for expert financial advisory services.',
     foundingDate: '2020',
     address: {
@@ -84,7 +89,7 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
     '@type': 'LocalBusiness',
     '@id': `${baseUrl}#localbusiness`,
     name: 'Financial Beacon Consulting',
-    image: `${baseUrl}/logo/logo.png`,
+    image: logoUrl,
     url: baseUrl,
     telephone: '+254-754-029-431',
     email: 'financialbeconconsulting@gmail.com',
@@ -249,6 +254,26 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
     ],
   }
 
+  // WebSite schema to reinforce brand logo in search
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${baseUrl}#website`,
+    url: baseUrl,
+    name: 'Financial Beacon Consulting',
+    inLanguage: 'en-KE',
+    publisher: {
+      '@id': `${baseUrl}#organization`,
+    },
+    image: logoUrl,
+    logo: logoUrl,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${baseUrl}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
   // Breadcrumb Schema (for navigation)
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -292,6 +317,13 @@ export default function SEOStructuredData({ type = 'home' }: SEOStructuredDataPr
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(servicesSchema),
+        }}
+      />
+      <Script
+        id="website-schema-seo"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
         }}
       />
       <Script
