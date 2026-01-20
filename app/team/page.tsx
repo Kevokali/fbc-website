@@ -2,17 +2,22 @@ import TeamSection from '@/components/TeamSection'
 import SEOStructuredData from '@/components/SEOStructuredData'
 import type { Metadata } from 'next'
 
+const baseUrl = 'https://financialbeaconconsulting.co.ke'
+
 export const metadata: Metadata = {
   title: 'Our Team',
-  description: 'Meet the expert team at Financial Beacon Consulting: Luke Weke (CPA, BCom Finance, MSc Finance Ongoing) - Director & Lead Consultant, and CPA Calleb Masese - Partner. Experienced financial consultants serving businesses in Kenya.',
-  keywords: 'FBC team, financial consultants Kenya, Luke Weke CPA, Calleb Masese CPA, financial advisory team Nairobi, certified public accountants Kenya',
+  description:
+    'Meet the expert team at Financial Beacon Consulting: Luke Weke (CPA, BCom Finance, MSc Finance Ongoing) - Director & Lead Consultant, and CPA Calleb Masese - Partner. Experienced financial consultants serving businesses in Kenya.',
+  keywords:
+    'FBC team, financial consultants Kenya, Luke Weke CPA, Calleb Masese CPA, financial advisory team Nairobi, certified public accountants Kenya',
   openGraph: {
     title: 'Our Team | Financial Beacon Consulting',
-    description: 'Meet the expert financial consultants at FBC: Luke Weke and CPA Calleb Masese. Experienced professionals helping Kenyan businesses achieve financial success.',
-    url: 'https://financialbeaconconsulting.co.ke/team',
+    description:
+      'Meet the expert financial consultants at FBC: Luke Weke and CPA Calleb Masese. Experienced professionals helping Kenyan businesses achieve financial success.',
+    url: `${baseUrl}/team`,
   },
   alternates: {
-    canonical: 'https://financialbeaconconsulting.co.ke/team',
+    canonical: '/team', // resolved via metadataBase to avoid absolute/relative mismatches
   },
 }
 

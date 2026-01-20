@@ -1,17 +1,21 @@
 import TestimonialsSection from '@/components/TestimonialsSection'
 import type { Metadata } from 'next'
 
+const baseUrl = 'https://financialbeaconconsulting.co.ke'
+
 export const metadata: Metadata = {
   title: 'Client Testimonials',
-  description: 'Read testimonials from satisfied clients of Financial Beacon Consulting. See how FBC has helped Kenyan businesses achieve financial clarity, compliance, and sustainable growth.',
-  keywords: 'FBC testimonials, financial consulting reviews, client testimonials Kenya, financial advisory reviews, FBC client feedback',
+  description:
+    'Read testimonials from satisfied clients of Financial Beacon Consulting. See how FBC has helped Kenyan businesses achieve financial clarity, compliance, and sustainable growth.',
+  keywords:
+    'FBC testimonials, financial consulting reviews, client testimonials Kenya, financial advisory reviews, FBC client feedback',
   openGraph: {
     title: 'Client Testimonials | Financial Beacon Consulting',
-    description: 'Read what our clients say about FBC\'s financial consulting services in Kenya.',
-    url: 'https://financialbeaconconsulting.co.ke/testimonials',
+    description: "Read what our clients say about FBC's financial consulting services in Kenya.",
+    url: `${baseUrl}/testimonials`,
   },
   alternates: {
-    canonical: 'https://financialbeaconconsulting.co.ke/testimonials',
+    canonical: '/testimonials', // resolved via metadataBase for a single canonical target
   },
 }
 
