@@ -9,12 +9,8 @@ export function middleware(request: Request) {
   // Skip asset routes
   if (PUBLIC_FILE.test(url.pathname)) return NextResponse.next()
 
-  // Enforce https and non-www canonical host to avoid duplicate/redirect issues
-  const isWWW = hostname.startsWith('www.')
-  const canonicalHost = isWWW ? hostname.slice(4) : hostname
-
-  if (isWWW || url.protocol === 'http:') {
-    url.hostname = canonicalHost
+  // Enforce HTTPS only. Host canonicalization is handled at DNS/CDN to avoid loops.
+  if (url.protocol === 'http:') {
     url.protocol = 'https:'
     return NextResponse.redirect(url, 308)
   }
